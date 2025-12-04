@@ -6,6 +6,12 @@ namespace LogicaBasica
     {
         static void Main(string[] args)
         {
+            //Exercicio01();
+            Exercicio02();
+        }
+
+        static void Exercicio01()
+        {
             string continuar = "sim";
 
             while (continuar != "sair")
@@ -43,6 +49,29 @@ namespace LogicaBasica
                 Console.Clear();
 
             }
+            Console.WriteLine("Programa Encerrado!");
+
+        }
+
+        static void Exercicio02()
+        {
+            string continuar = "sim";
+
+            while (continuar != "sair")
+            {
+                Console.WriteLine("=====================RAIO=======================");
+                Console.WriteLine();
+                Console.Write("Digite o valor do raio: ");
+                double valorRaio = double.Parse(Console.ReadLine()!);
+                double area = Math.PI * (valorRaio * valorRaio);
+
+                Console.WriteLine($"Área = {area:F4}");
+
+                Console.WriteLine("Digite 'sair' para encerrar ou pressione ENTER para continuar...");
+                continuar = Console.ReadLine()!.ToLower();
+                Console.Clear();
+            }
+
             Console.WriteLine("Programa Encerrado!");
         }
 
