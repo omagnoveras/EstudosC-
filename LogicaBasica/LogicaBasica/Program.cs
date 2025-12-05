@@ -8,7 +8,8 @@ namespace LogicaBasica
         {
             //Exercicio01();
             //Exercicio02();
-            Exercicio03();
+            //Exercicio03();
+            Exercicio04();
         }
 
         static void Exercicio01()
@@ -134,6 +135,49 @@ namespace LogicaBasica
             }
 
             Console.WriteLine("Programa Encerrado!");
+        }
+
+        static void Exercicio04()
+        {   
+            string continuar = "sim";
+
+            while (continuar != "sair")
+            {
+                Console.WriteLine("=== CÁLCULO DAS RAÍZES DE UMA EQUAÇÃO DO 2º GRAU ===");
+                //Coeficientes da equação
+                double a = 0.0;
+                double b = 0.0;
+                double c = 0.0;
+
+                Console.WriteLine("Digite o valor de A: ");
+                a = double.Parse(Console.ReadLine()!);
+
+                Console.WriteLine("Digite o valor de B: ");
+                b = double.Parse(Console.ReadLine()!);
+
+                Console.WriteLine("Digite o valor de C: ");
+                c = double.Parse(Console.ReadLine()!);
+
+                Console.WriteLine();
+
+                if (a != 0.0 && (b * b - 4 * a * c) >= 0.0)
+                {
+                    double delta = b * b - 4 * a * c;
+                    double raiz1 = (-b + Math.Sqrt(delta)) / (2 * a);
+                    double raiz2 = (-b - Math.Sqrt(delta)) / (2 * a);
+                    Console.WriteLine($"As raízes da equação são: R1 = {raiz1:F5} e R2 = {raiz2:F5}");
+                }
+                else
+                {
+                    Console.WriteLine("Impossível calcular as raízes da equação com os valores fornecidos.");
+                }
+
+                Console.WriteLine("Digite 'sair' para encerrar ou pressione ENTER para continuar...");
+                continuar = Console.ReadLine()!.ToLower();
+                Console.Clear();
+            }
+            
+
         }
 
     }
